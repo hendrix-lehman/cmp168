@@ -1,11 +1,11 @@
-class Person {
+class Person extends Object {
   // scope of the class - is anything within the class declaration {}
 
   // ATTRIBUTES
   // allows you to hide information
   private String name;
   private boolean hasShoes = false;
-  public final int MAX_AGE = 100;
+  public final int MAX_AGE = 120;
 
   // CONSTRUCTORS
   // creating an instance via a constructor
@@ -63,8 +63,8 @@ class Person {
 
   // OVERRIDING METHODS
   // toString is a method that is inherited from the Object class
-  // we can override it to provide a more meaningful representation of the object
   @Override
+  // we can override it to provide a more meaningful representation of the object
   public String toString() {
     return getClass().getName() + ": " + name;
   }
