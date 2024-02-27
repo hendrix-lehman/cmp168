@@ -11,5 +11,8 @@ class App {
 
     house.printHouseInfo();
     tinyHouse.printHouseInfo();
+
+    NestedClass.InnerClass innerClass = new NestedClass.InnerClass();
+    innerClass.show();
   }
 }
