@@ -12,7 +12,7 @@ class App {
 
     if (car instanceof Toyota) {
       System.out.println("car is a Toyota");
-      Toyota toyota = (Toyota) car;
+      Toyota toyota = (Toyota) car; // cast car to Toyota
       toyota.brake();
     }
 
@@ -22,7 +22,7 @@ class App {
     } else if (car2 instanceof Ford) {
       // this will execute because car2 is a Ford
       System.out.println("car2 is a Ford");
-      Ford ford = (Ford) car2;
+      Ford ford = (Ford) car2; // cast car2 to Ford
       ford.speedBoost();
     }
 

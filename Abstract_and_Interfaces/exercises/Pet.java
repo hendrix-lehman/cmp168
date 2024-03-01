@@ -1,11 +1,12 @@
-
 abstract class Pet {
 
+  // properties, attributes, fields, instance variables
   private String favoriteFood;
   private String favoriteToy;
   private int maintenanceLevel;
   private boolean goesOutside;
 
+  // constructors
   public Pet() {
     this("unknown food", "unknown toy", 0, false);
   }
@@ -17,8 +18,11 @@ abstract class Pet {
     this.goesOutside = goesOutside;
   }
 
+  // methods, behaviors
   public abstract void play();
 
+  // getters and setters for those properties, attributes, fields, instance
+  // variables
   public String getFavoriteFood() {
     return favoriteFood;
   }
@@ -51,6 +55,7 @@ abstract class Pet {
     maintenanceLevel = level;
   }
 
+  // overriding parent class methods, toString, equals
   @Override
   public String toString() {
     return "Favorite Food: " + favoriteFood + "\nFavorite Toy: " + favoriteToy + "\nMaintenance Level: "

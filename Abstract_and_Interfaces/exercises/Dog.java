@@ -1,12 +1,14 @@
 public class Dog extends Pet { // step 1 class declaration
 
   // step 2 member variables are used to represent attributes
+  // properties, fields, instance variables
   private String name;
   private double weight;
   private double height;
   private boolean isVaccinated;
   private int ageInDogYears;
 
+  // constructors
   public Dog() { // step 3 default constructor is used to initialize variables to default values
     super(); // call to default constructor of the parent class
     name = "doggy Doe";
@@ -44,6 +46,41 @@ public class Dog extends Pet { // step 1 class declaration
     ageInDogYears = age; // notice, we do not need to specify this.ageInDogYears here
   }
 
+  // methods, behaviors
+
+  // implementing the abstract method from the parent class
+  @Override
+  public void play() { // must provide a method body to make Dog a concrete class
+    System.out.println("WOOF! Let's play fetch with " + getFavoriteToy());
+  }
+
+  // additional behaviors
+  public void speak() { // 6 behavioral method
+    System.out.println("woof");
+  }
+
+  public void sit() { // 6 behavioral method
+    System.out.println("I, " + name + ", will sit now.");
+  }
+
+  public void beg() { // 6 behavioral method
+    System.out.println("treat for " + name + " woof please");
+  }
+
+  // helpers methods
+  public int getAgeConvertedIntoHumanYears() { // 6 calculation method
+    return ageInDogYears * 7;
+  }
+
+  public void gainWeight() { // 6 mutator method
+    weight++;
+  }
+
+  public void growTaller() { // 6 mutator method
+    height++;
+  }
+
+  // getters and setters
   // more code goes here … accessor and mutator methods… overloaded constructors
   public String getName() { // step 4 accessor method
     return name;
@@ -85,34 +122,7 @@ public class Dog extends Pet { // step 1 class declaration
     this.ageInDogYears = ageInDogYears;
   }
 
-  public void speak() { // 6 behavioral method
-    System.out.println("woof");
-  }
-
-  public void sit() { // 6 behavioral method
-    System.out.println("I, " + name + ", will sit now.");
-  }
-
-  public void beg() { // 6 behavioral method
-    System.out.println("treat for " + name + " woof please");
-  }
-
-  public void play() { // 6 behavioral method
-    System.out.println("I, " + name + ", will play now.");
-  }
-
-  public int getAgeConvertedIntoHumanYears() { // 6 calculation method
-    return ageInDogYears * 7;
-  }
-
-  public void gainWeight() { // 6 mutator method
-    weight++;
-  }
-
-  public void growTaller() { // 6 mutator method
-    height++;
-  }
-
+  // overriding parent class methods, toString, equals
   @Override
   public String toString() {
     super.toString(); // call to toString method of the parent class
