@@ -16,7 +16,7 @@ class Dummy implements Comparable<Dummy> {
   // + addFavoriteNumbers(int[]): void
   // + getNumberOfFavoriteNumbers(): int
   // + toString(): String // returns "Dummy [name= %10s id= %d]"
-  // + equals(Object): boolean // equals if all attributes are the same
+  // + equals(Object): boolean // equals if name and id attributes are the same
   // + compareTo(Dummy): int // compares sorting by id
 
   // attributes
