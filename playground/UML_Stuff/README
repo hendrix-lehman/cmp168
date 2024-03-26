@@ -1,0 +1,31 @@
+# Create a class to represent a Cat
+
+- numWhiskers : int
+- whiskerLength: double
+- age : int
+- isVaccinated : boolean
+- name : String
+
++ Cat() # numWhiskers = 0, whiskerLength = 0.0, age = 0, isVaccinated = false, name = "Unknown" 
++ Cat(int numWhiskers, double whiskerLength, int age, boolean isVaccinated, String name)
+
++ getNumWhiskers() : int
++ getWhiskerLength() : double
++ getAge() : int
++ getIsVaccinated() : boolean
++ getName() : String
++ setNumWhiskers(int whiskers) : void
++ setWhiskerLength(double length) : void
++ setAge(int age) : void
++ setIsVaccinated(boolean isVaccinated) : void
++ setName(String name) : void
+
++ toString() : String # Note1
++ equals(Object obj) : boolean # Note2
+
+Note1: The toString should be formatted as follows:
+ "Name: %s, Age: %d, Whiskers: %d, Whisker Length: %.2f, Vaccinated: %b"
+
+Note2: The equals method uses the name and age to determine if two cats are equal.
+
+
