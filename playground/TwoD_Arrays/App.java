@@ -1,4 +1,34 @@
+import java.util.Scanner;
+
 class App {
+
+  public static void displayArray(int[][] arr) {
+    System.out.println("-----------------------------------");
+    for (int i = 0; i < arr.length; i++) {
+      for (int j = 0; j < arr[i].length; j++) {
+        System.out.printf("[%d][%d]: %d | ", i, j, arr[i][j]);
+      }
+      System.out.println("\n-----------------------------------");
+    }
+  }
+
+  public static void displayArray(String[][] arr) {
+    System.out.println("-----------------------------------");
+    for (int i = 0; i < arr.length; i++) {
+      for (int j = 0; j < arr[i].length; j++) {
+        System.out.printf("[%d][%d]: %s | ", i, j, arr[i][j]);
+      }
+      System.out.println("\n-----------------------------------");
+    }
+  }
+
+  public static String[][] getPopulatedArray(int rows, int cols) {
+    return new String[rows][cols];
+  }
+
+  public static int[][] getPopulatedIntArray(int rows, int cols) {
+    return new int[rows][cols];
+  }
 
   public static void main(String[] args) {
     // Let's think about a one-dimensional array
@@ -15,10 +45,10 @@ class App {
 
     // Let's create an array of integers
     // I can initialize the array with values
-    int[] numbers = { 8, 5, 2, 6, 9 };
-    for (int i = 0; i < numbers.length; i++) {
-      System.out.printf("numbers[%d] = %d\n", i, numbers[i]);
-    }
+    // int[] numbers = { 8, 5, 2, 6, 9 };
+    // for (int i = 0; i < numbers.length; i++) {
+    // System.out.printf("numbers[%d] = %d\n", i, numbers[i]);
+    // }
 
     // How is this different from a two-dimensional array?
     // type[][] <identifier> = new type[<rows>][<columns>];
@@ -35,11 +65,35 @@ class App {
     // Let's create a 3x3 matrix
     // I can initialize the matrix with values
     int[][] matrix = { { 6, 3, 4 }, { 9, 5, 7 }, { 1, 8, 2 } };
-    for (int i = 0; i < matrix.length; i++) {
-      for (int j = 0; j < matrix[i].length; j++) {
-        System.out.printf("matrix[%d][%d] = %d\n", i, j, matrix[i][j]);
-      }
-    }
+    System.out.println("Matrix:");
+    displayArray(matrix);
+
+    // let's create an array of arryays - 2D array
+    // having each row with different number of columns
+    int[][] jaggedArray = { { 1, 2, 3 }, { 4, 5 }, { 6, 7, 8, 9 } };
+    System.out.println("Jagged Array:");
+    displayArray(jaggedArray);
+
+    // Scanner scanner = new Scanner(System.in);
+    //
+    // System.out.println("Enter a number for the row: ");
+    // int row = scanner.nextInt();
+    // System.out.println("Enter a number for the column: ");
+    // int col = scanner.nextInt();
+    // int[][] userInputs = new int[row][col];
+    // // let's print out the userInputs as a grid
+    // for (int i = 0; i < userInputs.length; i++) {
+    // for (int j = 0; j < userInputs[i].length; j++) {
+    // System.out.printf("Enter a number for userInputs[%d][%d]: ", i, j);
+    // userInputs[i][j] = scanner.nextInt();
+    // }
+    // }
+    //
+    // System.out.println("User Inputs:");
+    // displayArray(userInputs);
+
+    String[][] stringArrays = getPopulatedArray(3, 3);
+    displayArray(stringArrays);
 
   }
 }

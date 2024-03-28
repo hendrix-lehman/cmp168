@@ -115,6 +115,7 @@ class TicTacToe {
     game.printBoard();
 
     while (game.winner == ' ' && !game.isBoardFull()) {
+      System.out.println("Current player: " + game.currentPlayer);
       System.out.println("Enter the row and column to place your mark:\n For Example: 0,0 ");
       Scanner scanner = new Scanner(System.in);
       String input = scanner.nextLine();
