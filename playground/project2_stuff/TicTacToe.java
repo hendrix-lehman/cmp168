@@ -36,7 +36,7 @@ class TicTacToe extends JPanel {
         board.add(button);
       }
     }
-    add(board, BorderLayout.CENTER);
+    add(board);
   }
 
   private boolean checkRowCol(String c1, String c2, String c3) {
@@ -81,7 +81,7 @@ class TicTacToe extends JPanel {
     JFrame frame = new JFrame("Tic Tac Toe");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setSize(600, 600);
-    frame.add(this);
+    frame.add(this, BorderLayout.CENTER);
     frame.setVisible(true);
   }
 
