@@ -10,9 +10,18 @@ class TicTacToe extends JPanel {
 
   JPanel board;
   char currentPlayer = 'X';
+  int turn = 0;
 
   public TicTacToe() {
     createBoard();
+  }
+
+  private void resetBoard() {
+    for (int i = 0; i < 9; i++) {
+      ((JButton) board.getComponent(i)).setText("");
+    }
+    currentPlayer = 'X';
+    turn = 0;
   }
 
   public void createBoard() {
@@ -25,12 +34,28 @@ class TicTacToe extends JPanel {
         button.setPreferredSize(new Dimension(100, 100));
         button.setFont(button.getFont().deriveFont(50.0f));
         button.addActionListener(e -> {
+          System.out.println("Turn: " + turn);
+          if (turn == 9) {
+            int selection = JOptionPane.showConfirmDialog(null, "It's a tie!\nDo you want to play again?");
+            if (selection == JOptionPane.YES_OPTION) {
+              resetBoard();
+            } else {
+              System.exit(0);
+            }
+            return;
+          }
           if (button.getText().equals("")) {
             button.setText(currentPlayer + "");
             if (checkWin()) {
-              JOptionPane.showMessageDialog(null, currentPlayer + " wins!");
+              int selection = JOptionPane.showConfirmDialog(null, currentPlayer + " wins!\nDo you want to play again?");
+              if (selection == JOptionPane.YES_OPTION) {
+                resetBoard();
+              } else {
+                System.exit(0);
+              }
             }
             currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+            turn++;
           }
         });
         board.add(button);
