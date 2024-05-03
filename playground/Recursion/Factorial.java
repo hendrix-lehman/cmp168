@@ -14,19 +14,19 @@ class Factorial {
     if (n == 0 || n == 1) { // base case
       return 1;
     } else {
-      try {
-        System.out.printf("factorial(%d) = %d * factorial(%d - 1)\n", n, n, n);
-        Thread.sleep(2000); // sleep for 1 second
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
+      // try {
+      // System.out.printf("factorial(%d) = %d * factorial(%d - 1)\n", n, n, n);
+      // Thread.sleep(2000); // sleep for 1 second
+      // } catch (InterruptedException e) {
+      // e.printStackTrace();
+      // }
       int result = n * factorial(n - 1); // recursive call
-      try {
-        System.out.printf("factorial(%d) = %d\n", n, result);
-        Thread.sleep(1000); // sleep for 1 second
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
+      // try {
+      // System.out.printf("factorial(%d) = %d\n", n, result);
+      // Thread.sleep(1000); // sleep for 1 second
+      // } catch (InterruptedException e) {
+      // e.printStackTrace();
+      // }
 
       return result;
 
